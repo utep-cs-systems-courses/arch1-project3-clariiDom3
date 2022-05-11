@@ -2,6 +2,8 @@
 #include <libTimer.h>
 #include "lcdutils.h"
 #include "lcddraw.h"
+#include "buzzer.h"
+#include "switches.h"
 
 // WARNING: LCD DISPLAY USES P1.0.  Do not touch!!! 
 
@@ -14,7 +16,7 @@
 
 #define SWITCHES 15
 
-static char 
+char 
 switch_update_interrupt_sense()
 {
   char p2val = P2IN;
@@ -36,20 +38,21 @@ switch_init()			/* setup switch */
 
 int switches = 0;
 
+/*
 void
 switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense();
   switches = ~p2val & SWITCHES;
 }
-
+*/
 
 // axis zero for col, axis 1 for row
-short drawPos[2] = {10,10}, controlPos[2] = {10,10};
-short velocity[2] = {3,8}, limits[2] = {screenWidth-36, screenHeight-8};
+ //short drawPos[2] = {10,10}, controlPos[2] = {10,10};
+ //short velocity[2] = {3,8}, limits[2] = {screenWidth-36, screenHeight-8};
 
 short redrawScreen = 1;
-u_int controlFontColor = COLOR_GREEN;
+//u_int controlFontColor = COLOR_GREEN;
 
 void wdt_c_handler()
 {
@@ -62,7 +65,7 @@ void wdt_c_handler()
   }
 }
   
-void update_shape();
+//void update_shape();
 
 void main()
 {
@@ -72,13 +75,20 @@ void main()
   configureClocks();
   lcd_init();
   switch_init();
+  buzzer_init();
+  enableWDTInterrupts();
   
   enableWDTInterrupts();      /**< enable periodic interrupt */
   or_sr(0x8);	              /**< GIE (enable interrupts) */
-  
+
+  u_char width = screenWidth, height = screenHeight;
   clearScreen(COLOR_BLUE);
   while (1) {			/* forever */
     if (redrawScreen) {
+      drawString5x7(42, 5, "PROVENZA", COLOR_WHITE, COLOR_BLUE);
+      drawString5x7(37, 15, "By KAROL G", COLOR_WHITE, COLOR_BLUE);
+      fillRectangle(42, 44, 50, 50, COLOR_WHITE);
+      fillRectangle(18, 115, 92, 2, COLOR_WHITE);
       redrawScreen = 0;
       update_shape();
     }
@@ -89,29 +99,53 @@ void main()
 }
 
     
-    
+unsigned int SHAPE_COLOR = COLOR_BLACK;    
 void
 update_shape()
 {
   static unsigned char row = screenHeight / 2, col = screenWidth / 2;
+  static int colStep = 2;
+  static int rowStep = 2;
+  
   static char blue = 31, green = 0, red = 31;
   static unsigned char step = 0;
-  if (switches & SW4) return;
-  if (step <= 60) {
-    int startCol = col - step;
-    int endCol = col + step;
-    int width = 1 + endCol - startCol;
-    // a color in this BGR encoding is BBBB BGGG GGGR RRRR
-    unsigned int color = (blue << 11) | (green << 5) | red;
-    fillRectangle(startCol, row+step, width, 1, color);
-    fillRectangle(startCol, row-step, width, 1, color);
-    if (switches & SW3) green = (green + 1) % 64;
-    if (switches & SW2) blue = (blue + 2) % 32;
-    if (switches & SW1) red = (red - 3) % 32;
-    step ++;
-  } else {
-     clearScreen(COLOR_BLUE);
-     step = 0;
+
+  if(step <= 60)
+    {
+      int startCol = col - step;
+      int endCol = col + step;
+      int width = 22;
+
+      fillRectangle(18+step, 115, width, 4, SHAPE_COLOR);
+      //fillRectangle(endCol-step, row+step, width, 1, SHAPE_COLOR);
+
+      if(switches & SW1){
+	//SHAPE_COLOR = COLOR_BLACK;
+	fillRectangle(63, 130, 3, 10, COLOR_WHITE);
+	fillRectangle(70, 130, 3, 10, COLOR_WHITE);
+	buzzer_off();
+      }
+      if(switches & SW2){
+	//	SHAPE_COLOR = COLOR_RED;
+	drawChar5x7(65, 65, 'P', COLOR_HOT_PINK, COLOR_WHITE);
+        buzzer_off();
+      }
+      if(switches & SW3){
+	SHAPE_COLOR = COLOR_RED;
+	drawPixel(10, 5, COLOR_HOT_PINK);
+	drawPixel(120, 5,COLOR_WHITE);
+	drawPixel(120, 150, COLOR_GREEN);
+	drawPixel(10, 150, COLOR_RED);
+	buzzer_off();
+      }
+      if(switches & SW4){
+	starwars_song();
+      }
+      step++;
+    }else{
+    col += colStep*2;
+    clearScreen(COLOR_BLUE);
+    step = 0;
   }
 }
 

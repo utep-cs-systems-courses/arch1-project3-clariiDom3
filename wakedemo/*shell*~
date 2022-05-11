@@ -1,0 +1,158 @@
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o  -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o  -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load-s
+msp430-elf-gcc -mmcu=msp430g2553 -c   -o switch-interrupt-handler-s.o switch-interrupt-handler-s.s
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-s.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-s.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:20: wakedemo-s.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make loaad-c
+make: *** No rule to make target 'loaad-c'.  Stop.
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load-c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o  -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make clean
+rm -f *.o *.elf
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load-c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h   -c -o wakedemo.o wakedemo.c
+msp430-elf-gcc -mmcu=msp430g2553 -c   -o wdt_handler.o wdt_handler.s
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h   -c -o buzzer.o buzzer.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h   -c -o switch-interrupt-handler-c.o switch-interrupt-handler-c.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o  -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o  -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o  -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make a;;
+bash: syntax error near unexpected token `;;'
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o  -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make 
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> cd ..
+student@systems-vm:~/arch1-project3-clariiDom3> ls
+h  lcdLib  lib  LICENSE  Makefile  README.md  timerLib  wakedemo
+student@systems-vm:~/arch1-project3-clariiDom3> cd lcdLib
+student@systems-vm:~/arch1-project3-clariiDom3/lcdLib> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h    -c -o font-11x16.o font-11x16.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h    -c -o font-5x7.o font-5x7.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h    -c -o font-8x12.o font-8x12.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h    -c -o lcdutils.o lcdutils.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h    -c -o lcddraw.o lcddraw.c
+msp430-elf-ar crs libLcd.a font-11x16.o font-5x7.o font-8x12.o lcdutils.o lcddraw.o
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h    -c -o lcddemo.o lcddemo.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h  -L/opt/ti/msp430_gcc/include -L../lib  lcddemo.o libLcd.a -o lcddemo.elf -lTimer 
+student@systems-vm:~/arch1-project3-clariiDom3/lcdLib> cd ..
+student@systems-vm:~/arch1-project3-clariiDom3> ls
+h  lcdLib  lib  LICENSE  Makefile  README.md  timerLib  wakedemo
+student@systems-vm:~/arch1-project3-clariiDom3> cd timerLib
+student@systems-vm:~/arch1-project3-clariiDom3/timerLib> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os   -c -o clocksTimer.o clocksTimer.c
+msp430-elf-as   -o sr.o sr.s
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+student@systems-vm:~/arch1-project3-clariiDom3/timerLib> cd ..
+student@systems-vm:~/arch1-project3-clariiDom3> ls
+h  lcdLib  lib  LICENSE  Makefile  README.md  timerLib  wakedemo
+student@systems-vm:~/arch1-project3-clariiDom3> cd wakedemo
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load-c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load-s
+msp430-elf-gcc -mmcu=msp430g2553 -c   -o switch-interrupt-handler-s.o switch-interrupt-handler-s.s
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-s.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-s.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:20: wakedemo-s.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make clean
+rm -f *.o *.elf
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h   -c -o wakedemo.o wakedemo.c
+msp430-elf-gcc -mmcu=msp430g2553 -c   -o wdt_handler.o wdt_handler.s
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h   -c -o buzzer.o buzzer.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h   -c -o switch-interrupt-handler-c.o switch-interrupt-handler-c.c
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:14: wakedemo-c.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-c.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-c.o -lTimer -lLcd
+msp430-elf-gcc -mmcu=msp430g2553 -c   -o switch-interrupt-handler-s.o switch-interrupt-handler-s.s
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-s.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-s.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:20: wakedemo-s.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load
+make: *** No rule to make target 'load'.  Stop.
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load-s
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-s.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-s.o -1Timer -1Lcd
+msp430-elf-gcc: error: unrecognized command line option '-1Timer'; did you mean '--time'?
+msp430-elf-gcc: error: unrecognized command line option '-1Lcd'
+make: *** [Makefile:20: wakedemo-s.elf] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load-c
+msp430loader.sh wakedemo-c.elf
+check 
+No valid msp430 devices found! Are you sure the MSP430 is connected to the vm (check lsusb)? 
+make: *** [Makefile:17: load-c] Error 1
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load
+make: *** No rule to make target 'load'.  Stop.
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make all
+msp430-elf-gcc -mmcu=msp430g2553 -Os -I../h -L../lib -L/opt/ti/msp430_gcc/include/  -o wakedemo-s.elf wakedemo.o wdt_handler.o buzzer.o switch-interrupt-handler-s.o -lTimer -lLcd
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> make load-s
+msp430loader.sh wakedemo-s.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  wakedemo-s.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f wakedemo-s.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 2449 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/arch1-project3-clariiDom3/wakedemo> 
